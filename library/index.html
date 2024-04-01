@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name =" viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="style.css">
+    <script defer src = index.js></script>
+    <link rel= "preconnect" href="https://fonts.gstatic.com">
+    <link href= "https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link href= "https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel= "shortcut icon" href="./img/favicon.ico">
+    <title>Brooklyn Public Library</title>
+</head>
+<body class = "body">
+    <header>
+        <div class = "black-header-background"></div>
+        <h1>Brooklyn Public Library</h1>
+        <nav>
+            <ul class="navigation">
+                <li class= "nav-item"><a href = "#about">About</a></li>
+                <li class= "nav-item"><a href = "#favorites">Favorites</a></li>
+                <li class= "nav-item"><a href = "#coffeeshop">Coffee shop</a></li>
+                <li class= "nav-item"><a href = "#contacts">Contacts</a></li>
+                <li class= "nav-item"><a href = "#librarycard">Library Card</a></li>
+            </ul>
+        </nav>
+        <div class = "icon-button">
+            <div class = "icon-letters"><p class = "icon-letters-text"></p></div>
+            <img class = "icon" src="./img/icon_profile.svg" alt="profile photo">
+            <div class = "menu-no-auth">
+                <div class = "profile-text">Profile</div>
+                <div class = "profile-line"></div>
+                <div class = "profile-option-1 login-button">Log In</div>
+                <div class = "profile-option-2 register-button">Register</div>
+            </div>
+            <div class = "menu-with-auth">
+                <div class = "profile-text"><span class = "profile-text-with-auth"></span></div>
+                <div class = "profile-line"></div>
+                <div class = "profile-option-1 my-profile-button">My Profile</div>
+                <div class = "profile-option-2 log-out-button">Log Out</div>
+            </div>
+        </div>
+        <div class = "burger">
+            <span class = "burger-line1"></span>
+            <span class = "burger-line2"></span>
+            <span class = "burger-line3"></span>
+        </div>
+        <div class = "burger-menu">
+            <ul class = "burger-ul">
+                <li class="burger-item"><a href = "#about">About</a></li>
+                <li class="burger-item"><a href = "#favorites">Favorites</a></li>
+                <li class="burger-item"><a href = "#coffeeshop">Coffee shop</a></li>
+                <li class="burger-item"><a href = "#contacts">Contacts</a></li>
+                <li class="burger-item"><a href = "#librarycard">Library Card</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class = "register-window-wrapper">
+            <div class = "register-window register-window-inside">
+                <div class = "register-window-close-button register-window-inside">
+                    <img class = "register-window-close-button-img register-window-inside" src = "img/close_btn.svg">
+                </div>
+                <form action = "index.html" class = "register-window-form register-window-inside">
+                    <div class = "register-header register-window-inside">REGISTER</div>
+                    <label class = "register-window-item-text register-window-inside" for = "firstName">First name</label><br>
+                    <input class = "register-window-input register-window-inside" name = "firstName" id = "firstName" type = "text"><br>
+                    <label class = "register-window-item-text register-window-inside" for = "lastName">Last name</label><br>
+                    <input class = "register-window-input register-window-inside" name = "lastName" id = "lastName" type = "text"><br>
+                    <label class = "register-window-item-text register-window-inside" for = "email">E-mail</label><br>
+                    <input class = "register-window-input register-window-inside" name = "email" id = "email" type = "email"><br>
+                    <label class = "register-window-item-text register-window-inside" for = "password">Password</label><br>
+                    <input class = "register-window-input register-window-inside" name = "password" id = "password" type = "password">
+                    <input class = "register-window-sign-up register-window-inside" type = "submit" value = "Sign Up">
+                    <div class = "register-window-bottom-wrapper register-window-inside">
+                        <p class = "register-window-already-account register-window-inside">Already have an account?</p>
+                        <div class = "register-window-login-button register-window-inside">Login</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class = "login-window-wrapper">
+            <div class = "login-window login-window-inside">
+                <div class = "login-window-close-button login-window-inside">
+                    <img class = "login-window-close-button-img login-window-inside" src = "img/close_btn.svg">
+                </div>
+                <form action = "index.html" class = "login-window-form login-window-inside">
+                    <div class = "register-header login-window-inside">LOGIN</div>
+                    <label class = "login-window-item-text login-window-inside" for = "emailORcard">E-mail or readers card</label><br>
+                    <input class = "login-window-input login-window-inside" name = "emailORcard" id = "emailORcard" type = "text"><br>
+                    <label class = "login-window-item-text login-window-inside" for = "firstName">Password</label><br>
+                    <input class = "login-window-input login-window-inside" name = "password" id = "password-login" type = "password">                    
+                    <input class = "login-window-login login-window-inside" type = "submit" value = "Log In">
+                    <div class = "login-window-bottom-wrapper login-window-inside">
+                        <p class = "login-window-no-account login-window-inside">Don't have an account?</p>
+                        <div class = "login-window-register-button login-window-inside">Register</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class = my-profile-window-wrapper>
+            <div class = "my-profile-window my-profile-window-inside">
+                <div class = "my-profile-left-part my-profile-window-inside">
+                    <div class = "my-profile-white-square my-profile-window-inside"><p class = "my-profile-white-square-text my-profile-window-inside"></p></div>
+                    <div class = "my-profile-name my-profile-window-inside"><p class = "my-profile-name-text my-profile-window-inside"></p></div>
+                </div>
+                <div class = "my-profile-right-part my-profile-window-inside">
+                    <div class = "my-profile-window-close-button my-profile-window-inside">
+                        <img class = "my-profile-window-close-button-img my-profile-window-inside" src = "img/close_btn.svg">
+                    </div>
+                    <div class = "my-profile-right-part-header my-profile-window-inside">MY PROFILE</div>
+                    <div class = "my-profile-card-info my-profile-window-inside">
+                        <div class = "my-profile-visits my-profile-window-inside">
+                            <div class = "my-profile-info-text my-profile-window-inside">Visits</div>
+                            <img class = "my-profile-info-img my-profile-window-inside" src = "img/Union.svg">
+                            <div class = "my-profile-info-number my-profile-window-inside"><p class = "my-profile-number-of-visits-card-info my-profile-window-inside"></p></div>
+                        </div>
+                        <div class = "my-profile-bonuses my-profile-window-inside">
+                            <div class = "my-profile-info-text my-profile-window-inside">Bonuses</div>
+                            <img class = "my-profile-info-img my-profile-window-inside" src = "img/Star 1.svg">
+                            <div class = "my-profile-info-number my-profile-window-inside">1240</div>
+                        </div>
+                        <div class = "my-profile-books my-profile-window-inside">
+                            <div class = "my-profile-info-text my-profile-window-inside">Books</div>
+                            <img class = "my-profile-info-img my-profile-window-inside" src = "img/book.svg">
+                            <div class = "my-profile-info-number my-profile-window-inside">0</div>
+                        </div>
+                    </div>
+                    <div class = "my-profile-rented-books-header my-profile-window-inside">Rented books</div>
+                    <ul class = "my-profile-rented-books-list my-profile-window-inside">
+                        <li class = "my-profile-rented-books-list-item my-profile-window-inside">The Last Queen, Clive Irving</li>
+                        <li class = "my-profile-rented-books-list-item my-profile-window-inside">Dominicana, Angie Cruz</li>
+                    </ul>
+                    <div class = "my-profile-card-number-info my-profile-window-inside">
+                        <div class = "my-profile-card-number-text my-profile-window-inside">Card number</div>
+                        <div class = "my-profile-card-number my-profile-window-inside"></div>
+                        <img class = "my-profile-card-number-copy my-profile-window-inside" src = "img/icon copy.svg" onclick = "copyFunction()">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "buy-card-window-wrapper">
+            <div class = "buy-card-window buy-card-window-inside">
+                <div class = "buy-card-window-header buy-card-window-inside"><span class = "buy-card-window-header-text">BUY A LIBRARY CARD</span></div>
+                <img class = "buy-card-window-close-button" src = "img/close_btn (1).svg">
+                <div class = "buy-card-window-body buy-card-window-inside">
+                    <div class = "buy-card-window-body-left">
+                        <form action = "index.html" class = "buy-card-window-form buy-card-window-inside">
+                            <label class = "buy-card-window-item-text buy-card-window-inside" for = "bankCardNumber">Bank card number</label><br>
+                            <input class = "buy-card-window-input buy-card-window-inside" name = "bankCardNumber" id = "bankCardNumber" type = "text"><br>                    
+                            <fieldset>
+                                <legend class = "buy-card-window-item-text buy-card-window-inside">Expiration code</legend>
+                                <div class = "small-inputs-wrapper buy-card-window-inside">
+                                    <input class = "buy-card-window-input-small buy-card-window-inside" name = "exp-code1" id = "exp-code1" type="text"><br>
+                                    <input class = "buy-card-window-input-small buy-card-window-inside" name = "exp-code2" id = "exp-code2" type="text"><br>
+                                </div>
+                            </fieldset>
+                            <label class = "buy-card-window-item-text buy-card-window-inside" for = "CVC">CVC</label><br>
+                            <input class = "buy-card-window-input-small buy-card-window-inside buy-card-window-input-bottom-margin" name = "CVC" id = "CVC" type = "text"><br>
+                            <label class = "buy-card-window-item-text buy-card-window-inside" for = "cardholderName">Cardholder name</label><br>
+                            <input class = "buy-card-window-input buy-card-window-inside" name = "cardholderName" id = "cardholderName" type = "text"><br>
+                            <label class = "buy-card-window-item-text buy-card-window-inside" for = "postalCode">Postal code</label><br>
+                            <input class = "buy-card-window-input buy-card-window-inside" name = "postalCode" id = "postalCode" type = "text"><br>
+                            <label class = "buy-card-window-item-text buy-card-window-inside" for = "cityTown">City / Town</label><br>
+                            <input class = "buy-card-window-input buy-card-window-inside" name = "cityTown" id = "cityTown" type = "text"><br>
+                            <div class = "button-price-wrapper buy-card-window-inside">
+                                <input class = "buy-card-window-button-disabled  buy-card-window-inside" id = "#buy-card-button" type = "submit" value = "Buy">
+                                <span class = "buy-card-price buy-card-window-inside">$ 25.00</span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class = "buy-card-window-body-right">
+                        If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class = "welcome">
+            <div class = "welcome-background"></div>
+            <h2 class = "welcome-text">
+                WELCOME<br>TO THE BROOKLYN<br>LIBRARY
+            </h2>
+        </section>
+        <section class = "about" id = "about">
+            <h2>About</h2>
+            <div class = "line"></div>
+            <div class = "about-text">
+                The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside
+            </div>
+            <div class = "carousel-wrapper">
+                <div class = "arrow arrow-left arrow-transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="11" viewBox="0 0 8 11" fill="none">
+                        <path d="M7 0.5L1 5.5L7 10.5" stroke="black" stroke-linecap="round" stroke-linejoin="round">
+                    </svg>
+                </div>
+                <div class = "carousel">
+                    <img class = "about-picture about-picture-1 about-picture-able" src = "./img/image-1.png" alt = "library photo">
+                    <img class = "about-picture about-picture-2 about-picture-able" src = "./img/image-2.png" alt = "library photo">
+                    <img class = "about-picture about-picture-3 about-picture-able" src = "./img/image-3.png" alt = "library photo">
+                    <img class = "about-picture about-picture-4 about-picture-disable" src = "./img/image-4.png" alt = "library photo">
+                    <img class = "about-picture about-picture-5 about-picture-disable" src = "./img/image-5.png" alt = "library photo">
+                </div>
+                <svg class = "arrow arrow-right" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path d="M9 17.5L15 12.5L9 7.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class = "three-pictures-choice">
+                <div class = "picture-choice-able about-button-1">
+                    <button class = "circle-button-able circle1 circle-active"></button>
+                </div>
+                <div class = "picture-choice-able about-button-2">
+                    <button class = "circle-button-able circle2 circle-not-active"></button>
+                </div>
+                <div class = "picture-choice-able about-button-3">
+                    <button class = "circle-button-able circle3 circle-not-active"></button>
+                </div>
+                <div class = "picture-choice-disable about-button-4">
+                    <button class = "circle-button-disable circle4 circle-not-active"></button>
+                </div>
+                <div class = "picture-choice-disable about-button-5">
+                    <button class = "circle-button-disable circle5 circle-not-active"></button>
+                </div>
+            </div>
+        </section>
+        <section class = "favorites" id = "favorites">
+            <h2>Favorites</h2>
+            <div class = "line"></div>
+            <p class = "favorite-pick-text">
+                Pick favorites of season
+            </p>
+            <div class = "season-choice">
+                <div class = "season-choice-button season-choice-button-winter">
+                    <div class = "season-choice-circle">
+                        <div class = "season-choice-circle-small small-circle-checked" id = "winter"></div>
+                    </div>
+                </div>
+                <div class = "season season-text-winter season-bold">Winter</div>
+                <div class = "season-choice-button season-choice-button-spring">
+                    <div class = "season-choice-circle">
+                        <div class = "season-choice-circle-small" id = "spring"></div>
+                    </div>
+                </div>
+                <div class = "season season-text-spring">Spring</div>
+                <div class = "season-choice-button season-choice-button-summer">
+                    <div class = "season-choice-circle">
+                        <div class = "season-choice-circle-small" id = "summer"></div>
+                    </div>
+                </div>
+                <div class = "season season-text-summer">Summer</div>
+                <div class = "season-choice-button season-choice-button-autumn">
+                    <div class = "season-choice-circle">
+                        <div class = "season-choice-circle-small" id = "autumn"></div>
+                    </div>
+                </div>
+                <div class = "season season-text-autumn autumn">Autumn</div>
+            </div>
+        </div>
+        <div class = "season-books season-books-winter">
+            <div class = "books-line">
+                <div class = "season-book book1">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        THE BOOK EATERS <br>
+                        By Sunyi Dean
+                    </div>
+                    <div class = "book-description">
+                        An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
+                    </div>
+                    <div class = "empty-books"></div>
+                    <button class = "buy-button" id = "buy-button-winter1">Buy</button>
+                    <img class = "book-image" src = "./img/winter-book1.png" alt = "winter book">
+                </div>
+                <div class = "season-book book2">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        CACKLE <br>
+                        By Rachel Harrison
+                    </div>
+                    <div class = "book-description">
+                        Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.
+                    </div>
+                    <div class = "empty-books"></div>
+                    <button class = "buy-button" id = "buy-button-winter2">Buy</button>
+                    <img class = "book-image" src = "./img/winter-book2.png" alt = "winter book">
+                </div>
+            </div>
+            <div class = "books-line">
+                <div class = "season-book book1">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        DANTE: POET OF THE SECULAR WORLD <br>
+                        By Erich Auerbach
+                    </div>
+                    <div class = "book-description">
+                        Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.
+                    </div>
+                    <div class = "empty-books"></div>
+                    <button class = "buy-button"  id = "buy-button-winter3">Buy</button>
+                    <img class = "book-image" src = "./img/winter-book3.png" alt = "winter book">
+                </div>
+                <div class = "season-book book2">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        THE LAST QUEEN <br>
+                        By Clive Irving
+                    </div>
+                    <div class = "book-description">
+                        A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.
+                    </div>  
+                    <button disabled class = "buy-button" id = "buy-button-winter4">Buy</button>
+                    <img class = "book-image" src = "./img/winter-book4.png" alt = "winter book">
+                </div>
+            </div>
+        </div>
+        <div class = "season-books season-books-spring season-books-disable">
+            <div class = "books-line">
+                <div class = "season-book book1">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        THE BODY <br>
+                        By Stephen King
+                    </div>
+                    <div class = "book-description">
+                        Powerful novel that takes you back to a nostalgic time, exploring both the beauty and danger and loss of innocence that is youth.
+                    </div>
+                    <div class = "empty-books"></div>
+                    <button class = "buy-button" id = "buy-button-spring1">Buy</button>
+                    <img class = "book-image" src = "./img/spring-book1.png" alt = "winter book">
+                </div>
+                <div class = "season-book book2">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        CARRY: A MEMOIR OF SURVIVAL OF STOLEN LAND <br>
+                        By Toni Jenson
+                    </div>
+                    <div class = "book-description">
+                        This memoir about the author's relationship with gun violence feels both expansive and intimate, resulting in a lyrical indictment of the way things are.
+                    </div>
+                    <div class = "empty-books"></div>
+                    <button class = "buy-button" id = "buy-button-spring2">Buy</button>
+                    <img class = "book-image" src = "./img/spring-book2.png" alt = "winter book">
+                </div>
+            </div>
+            <div class = "books-line">
+                <div class = "season-book book1">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        DAYS OF DISTRACTION <br>
+                        By Alexandra Chang
+                    </div>
+                    <div class = "book-description">
+                        A sardonic view of Silicon Valley culture, a meditation on race, and a journal of displacement and belonging, all in one form-defying package of spare prose.
+                    </div>
+                    <div class = "empty-books"></div>
+                    <button class = "buy-button" id = "buy-button-spring3">Buy</button>
+                    <img class = "book-image" src = "./img/spring-book3.png" alt = "winter book">
+                </div>
+                <div class = "season-book book2">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        DOMINICANA <br>
+                        By Angie Cruz
+                    </div>
+                    <div class = "book-description">
+                        A fascinating story of a teenage girl who marries a man twice her age with the promise to bring her to America. Her marriage is an opportunity for her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.
+                    </div>  
+                    <button disabled class = "buy-button" id = "buy-button-spring4">Buy</button>
+                    <img class = "book-image" src = "./img/spring-book4.png" alt = "winter book">
+                </div>
+            </div>
+        </div>
+        <div class = "season-books season-books-summer season-books-disable">
+            <div class = "books-line">
+                <div class = "season-book book1">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        CRUDE: A MEMOIR <br>
+                        By Pablo Fajardo & sophie Tardy-Joubert
+                    </div>
+                    <div class = "book-description">
+                        Drawing and color by Damien Roudeau | This book illustrates the struggles of a group of indigenous Ecuadoreans as they try to sue the ChevronTexaco company for damage their oil fields did to the Amazon and her people
+                    </div>
+                    <div class = "empty-books"></div>
+                    <button class = "buy-button" id = "buy-button-summer1">Buy</button>
+                    <img class = "book-image" src = "./img/summer-book1.png" alt = "winter book">
+                </div>
+                <div class = "season-book book2">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        LET MY PEOPLE SURFING <br>
+                        By Yvon Chouinard
+                    </div>
+                    <div class = "book-description">
+                        Chouinard—climber, businessman, environmentalist—shares tales of courage and persistence from his experience of founding and leading Patagonia, Inc. Full title: Let My People Go Surfing: The Education of a Reluctant Businessman, Including 10 More Years of Business Unusual.
+                    </div>
+                    <div class = "empty-books"></div>
+                    <button class = "buy-button"  id = "buy-button-summer2">Buy</button>
+                    <img class = "book-image" src = "./img/summer-book2.png" alt = "winter book">
+                </div>
+            </div>
+            <div class = "books-line">
+                <div class = "season-book book1">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        THE OCTOPUS MUSEUM: POEMS <br>
+                        By Brenda Shaughnessy
+                    </div>
+                    <div class = "book-description">
+                        This collection of bold and scathingly beautiful feminist poems imagines what comes after our current age of environmental destruction, racism, sexism, and divisive politics.
+                    </div>
+                    <div class = "empty-books"></div>
+                    <button class = "buy-button" id = "buy-button-summer3">Buy</button>
+                    <img class = "book-image" src = "./img/summer-book3.png" alt = "winter book">
+                </div>
+                <div class = "season-book book2">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        SHARK DIALOGUES: A NOVEL <br>
+                        By Kiana Davenport
+                    </div>
+                    <div class = "book-description">
+                        An epic saga of seven generations of one family encompasses the tumultuous history of Hawaii as a Hawaiian woman gathers her four granddaughters together in an erotic tale of villains and dreamers, queens and revolutionaries, lepers and healers.
+                    </div>  
+                    <button disabled class = "buy-button" id = "buy-button-summer4">Buy</button>
+                    <img class = "book-image" src = "./img/summer-book4.png" alt = "winter book">
+                </div>
+            </div>
+        </div>
+        <div class = "season-books season-books-autumn season-books-disable">
+            <div class = "books-line">
+                <div class = "season-book book1"> 
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        CASUAL CONVERSATION <br>
+                        By Renia White
+                    </div>
+                    <div class = "book-description">
+                        White's impressive debut collection takes readers through and beyond the concepts of conversation and the casual - both what we say to each other and what we don't, examining the possibilities around how we construct and communicate identity.
+                    </div>
+                    <div class = "empty-books"></div>
+                    <button class = "buy-button" id = "buy-button-autumn1">Buy</button>
+                    <img class = "book-image" src = "./img/autumn-book1.png" alt = "winter book">
+                </div>
+                <div class = "season-book book2">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        THE GREAT FIRE <br>
+                        By Lou Ureneck
+                    </div>
+                    <div class = "book-description">
+                        The harrowing story of an ordinary American and a principled Naval officer who, horrified by the burning of Smyrna, led an extraordinary rescue effort that saved a quarter of a million refugees from the Armenian Genocide
+                    </div>
+                    <div class = "empty-books"></div>
+                    <button class = "buy-button" id = "buy-button-autumn2">Buy</button>
+                    <img class = "book-image" src = "./img/autumn-book2.png" alt = "winter book">
+                </div>
+            </div>
+            <div class = "books-line">
+                <div class = "season-book book1">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        RICKEY: THE LIFE AND LEGEND <br>
+                        By Howard Bryant
+                    </div>
+                    <div class = "book-description">
+                        With the fall rolling around, one can't help but think of baseball's postseason coming up! And what better way to prepare for it than reading the biography of one of the game's all-time greatest performers, the Man of Steal, Rickey Henderson?
+                    </div>
+                    <div class = "empty-books"></div>
+                    <button class = "buy-button" id = "buy-button-autumn3">Buy</button>
+                    <img class = "book-image" src = "./img/autumn-book3.png" alt = "winter book">
+                </div>
+                <div class = "season-book book2">
+                    <div class = "staff-pick">
+                        Staff Picks
+                    </div>
+                    <div class = "favorites-line"></div>
+                    <div class = "book-name">
+                        SLUG: AND OTHER STORIES <br>
+                        By Megan Milks
+                    </div>
+                    <div class = "book-description">
+                        Exes Tegan and Sara find themselves chained together by hairballs of codependency. A father and child experience the shared trauma of giving birth to gods from their wounds.
+                    </div>  
+                    <button disabled class = "buy-button" id = "buy-button-autumn4">Buy</button>
+                    <img class = "book-image" src = "./img/autumn-book4.png" alt = "winter book">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class = "coffeeshop" id = "coffeeshop">
+        <h2>Coffee Shop</h2>
+        <div class = "line"></div>
+        <div class = "coffeeshop-text">
+            In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation. You can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts from bakery.
+        </div>
+        <div class = "menu">
+            <div class = "coffee">
+                <div class = "coffee-header">
+                    Coffee & Tea
+                </div>
+                <div class = "coffee-item">
+                    <div class = "coffee-name">Cold Brew Coffee</div>
+                    <div class = "coffee-line"></div>
+                    <div class = "coffee-cost">$3</div>
+                </div>
+                <div class = "coffee-item">
+                    <div class = "coffee-name">French Press Pot</div>
+                    <div class = "coffee-line"></div>
+                    <div class = "coffee-cost">$5</div>
+                </div>
+                <div class = "coffee-item">
+                    <div class = "coffee-name">Espresso</div>
+                    <div class = "coffee-line"></div>
+                    <div class = "coffee-cost">$2</div>
+                </div>
+                <div class = "coffee-item">
+                    <div class = "coffee-name">Cappuccino</div>
+                    <div class = "coffee-line"></div>
+                    <div class = "coffee-cost">$4</div>
+                </div>
+                <div class = "coffee-item">
+                    <div class = "coffee-name">Hot tea</div>
+                    <div class = "coffee-line"></div>
+                    <div class = "coffee-cost">$2</div>
+                </div>
+                <div class = "coffee-item">
+                    <div class = "coffee-name">Cold tea</div>
+                    <div class = "coffee-line"></div>
+                    <div class = "coffee-cost">$2</div>
+                </div>
+            </div>
+            <div class = "desserts">
+                <div class = "desserts-header">
+                    Desserts & Cakes
+                </div>
+                <div class = "dessert-item">
+                    <div class = "dessert-name">Forest Gateau</div>
+                    <div class = "dessert-line"></div>
+                    <div class = "dessert-cost">$16</div>
+                </div>
+                <div class = "dessert-item">
+                    <div class = "dessert-name">Blue Moon</div>
+                    <div class = "dessert-line"></div>
+                    <div class = "dessert-cost">$16</div>
+                </div>
+                <div class = "dessert-item">
+                    <div class = "dessert-name">Truffle Cake</div>
+                    <div class = "dessert-line"></div>
+                    <div class = "dessert-cost">$15</div>
+                </div>
+                <div class = "dessert-item">
+                    <div class = "dessert-name">Chocolate Cake</div>
+                    <div class = "dessert-line"></div>
+                    <div class = "dessert-cost">$18</div>
+                </div>
+                <div class = "dessert-item">
+                    <div class = "dessert-name">Poet's Dream Cake</div>
+                    <div class = "dessert-line"></div>
+                    <div class = "dessert-cost">$16</div>
+                </div>
+                <div class = "dessert-item">
+                    <div class = "dessert-name">Pineapple Cake</div>
+                    <div class = "dessert-line"></div>
+                    <div class = "dessert-cost">$14</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class = "contacts" id = "contacts">
+        <h2>Our Contacts</h2>
+        <div class = "line"></div>
+        <div class = "contact-info">
+            <div class = "contacts-header-1">For all Library inquiries:</div>
+            <div class = "contacts-text">Please call <a class = "tel" href = "tel:(617)730-2370">(617) 730-2370</a></div>
+            <div class = "contacts-text">For TTY service, please call<a class = "tel" href = "tel:(617)730-2370">(617) 730-2370</a></div>
+            <div class = "contacts-text">Putterham Library: <a class = "tel" href = "tel:(617)730-2385">(617) 730-2385</a></div>
+            <div class = "contacts-header-2">Senior Staff</div>
+            <div class = "contacts-text">Library Director: <a class = "mail" href = "mailto:AmandaHirst@gmail.com"><b>Amanda Hirst</b></a></div>
+        </div>
+        <img class = "map" src = "./img/map1.png" alt = "map">
+    </section>
+    <section class = "librarycard" id = "librarycard">
+        <h2>Digital Library Cards</h2>
+        <div class = "line"></div>
+        <div class = "library-card-info">
+            <div class = "find-your-card">
+                <div class = "find-card-text">Find your Library card</div>
+                <div class = "form-block">
+                    <form action = "index.html" class = "card-form">
+                        <div class = "form-inputs">
+                            <div class = "form-name">Brooklyn Public Library</div>
+                            <input class = "form-input-text" name = "readerName" type = "text" placeholder = "Reader's name">
+                            <input class = "form-input-text" name = "cardNumber" type = "text" placeholder = "Card number">
+                        </div>
+                        <input type = "submit" class = "form-button" value = "Check the card">
+                        <div class = "card-info">
+                            <div class = "visits">
+                                <div class = "card-info-text">Visits</div>
+                                <img class = "card-info-img" src = "img/Union.svg">
+                                <div class = "card-info-number"><p class = "number-of-visits-card-info"></p></div>
+                            </div>
+                            <div class = "bonuses">
+                                <div class = "card-info-text">Bonuses</div>
+                                <img class = "card-info-img" src = "img/Star 1.svg">
+                                <div class = "card-info-number">1240</div>
+                            </div>
+                            <div class = "books">
+                                <div class = "card-info-text">Books</div>
+                                <img class = "card-info-img" src = "img/book.svg">
+                                <div class = "card-info-number">2</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class = "get-card">
+                <div class = "get-card-header">Get a reader card</div>
+                <div class = "get-card-text">You will be able to see a reader card after logging into account or you can register a new account</div>
+                <div class = "buttons">
+                    <button class = "sign-log librarycard-sign-up">Sign Up</button>
+                    <button class = "sign-log library-card-log-in">Log In</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+    <footer>
+        <div class = "footer-before-line">
+            <div class = "line1">
+                <a class = "address" href = "https://goo.gl/maps/kRRAyNuajFT2aEoS8">286 Cadman Plaza, New York, NY 11238, United States</a>
+                <div class = "week1">Mon - Fri<br>08:00 am - 07:00 pm</div>
+            </div>
+            <div class = "line2">
+                <ul class = "socials">
+                    <li><a href = "https://twitter.com/BKLYNlibrary?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img class = "socials-img" src = "./img/u_twitter-alt.svg" alt = "twitter"></a></li>
+                    <li><a href = "https://www.instagram.com/bklynlibrary/"><img class = "socials-img" src = "./img/u_instagram.svg" alt = "instagram"></a></li>
+                    <li><a href = "https://www.facebook.com/BrooklynPublicLibrary/"><img class = "socials-img" src = "./img/u_facebook-f.svg" alt = "facebook"></a></li>
+                </ul>
+                <div class = "week2">Sat - Sun<br>10:00 am - 06:00 pm</div>
+            </div>
+        </div>
+        <hr>
+        <div class = "footer-after-line">
+            <div class = "year">2023</div>
+            <a class = "rss" href = " https://rs.school/js-stage0">The Rolling Scopes School</a>
+            <a class = "username" href = "https://github.com/agamasha">Agalakova Maria</a>
+        </div>
+    </footer>
+</body>
+</html>

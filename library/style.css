@@ -1,0 +1,2284 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style: none;
+
+}
+
+body {
+    margin: auto;
+}
+
+.body-no-scroll {
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1439px) {
+    body {
+        width: 1440px;
+    }
+}
+
+header {
+    background-color: #0C0C0E;
+    color: #FFFFFF;
+    display: flex;
+    height: 90px;
+    align-items: center;
+    position: relative;
+}
+
+h1 {
+    font-family: 'Forum', serif;
+    font-size: 30px;
+    font-weight: 100;
+    margin-left: 20px;
+    letter-spacing: 0.02em;
+}
+
+.empty {
+    display: inline-flex;
+    flex-grow: 1;
+}
+
+nav {
+    margin-left: auto;
+    display: flex;
+    margin-right: 40px;
+}
+
+.navigation {
+    display: inline-flex;
+}
+
+.nav-item {
+    font-family: 'Inter', serif;
+    font-size: 20px;
+    margin-left: 30px;
+    line-height: 21px;
+    list-style-type: none;
+}
+
+.nav-item a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    border-bottom: 1px solid #FFFFFF;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.icon {
+    display: inline-block;
+    display: flex;
+    height: 28px;
+    width: 28px;
+    position: relative;
+    z-index: 2;
+}
+
+.icon:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.5s;
+    position: relative;
+    z-index: 1;
+}
+
+.icon-button {
+    margin-right: 20px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.icon-letters {
+    display: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+    background: #FFFFFF;
+    text-align: center;
+}
+
+.icon-letters:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.5s;
+    position: relative;
+}
+
+.icon-letters-text {
+    color: #BB945F;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+    margin: 0;
+    top: 50%;
+    transform: translate(0, 25%);
+}
+
+.menu-no-auth {
+    display: none;
+    align-items: center;
+    width: 80px;
+    height: 115px;
+    background-color: #FFFFFF;
+    position: absolute;
+    right: 0;
+    top: 28px;
+    animation: fade-in 1s ease forwards;
+}
+
+.menu-with-auth {
+    display: none;
+    width: 80px;
+    height: 115px;
+    background-color: #FFFFFF;
+    position: absolute;
+    right: 0;
+    top: 28px;
+    animation: fade-in 1s ease forwards;
+}
+
+.profile-text {
+    text-align: center;
+    color: #000000;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    position: absolute;
+    top: 5px;
+    right: 16px;
+    left: 16px;
+}
+
+.profile-text-with-auth {
+    font-size: 10px;
+    text-align: center;
+    position: absolute;
+    top: 5px;
+    left: -5px;
+}
+
+.profile-line {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    left: 20px;
+    width: 40px;
+    height: 1px;
+    background-color: #BB945F;
+    margin-top: 5px;
+}
+
+.profile-option-1 {
+    color: #000000;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    right: 0;
+}
+
+.profile-option-1:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.profile-option-2 {
+    color: #000000;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    right: 0;
+}
+
+.profile-option-2:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.register-window-wrapper {
+    opacity: 0;
+    transition: opacity 1s;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+}
+
+.register-window {
+    opacity: 0;
+    transition: opacity 1s;
+    background-color: #FFFFFF;
+    width: 250px;
+    height: 382px;
+    display: flex;
+    margin: auto;
+    vertical-align: middle;
+    position: relative;
+    top: calc(25vh - 191px);
+}
+
+.register-window-close-button {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.register-header {
+    display: block;
+    color: #000000;
+    text-align: center;
+    font-family: "Forum", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;   
+    width: 81px;
+    margin: 20px 85px 20px 85px;
+}
+
+.register-window-item-text {
+    display: inline-block;
+    text-align: left;
+    color: #000000;
+    text-align: center;
+    font-family: "Inter", serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.3px;  
+    margin-left: 25px;  
+    margin-bottom: 10px;
+}
+
+.register-window-input {
+    margin-left: 25px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid #BB945F;
+}
+
+.register-window-sign-up {
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter", serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;  
+    background-color: #FFFFFF;    
+    margin-left: 25px;
+    margin-top: 10px;      
+}
+
+.register-window-sign-up:hover {
+    cursor: pointer;
+    background-color: #BB945F;
+    border: 1px solid #BB945F;
+    transition: 0.5s;   
+}
+
+.register-window-bottom-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.register-window-already-account {
+    color: #000;
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.register-window-login-button {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter", serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-decoration-line: underline;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 32px;
+}
+
+.register-window-login-button:hover {
+    cursor: pointer;
+}
+
+.login-window-wrapper {
+    opacity: 0;
+    transition: opacity 1s;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+}
+
+.login-window {
+    opacity: 0;
+    transition: opacity 1s;
+    background-color: #FFFFFF;
+    width: 250px;
+    height: 262px;
+    display: flex;
+    margin: auto;
+    vertical-align: middle;
+    position: relative;
+    top: calc(25vh - 181px);
+}
+
+.login-window-close-button {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.login-header {
+    display: block;
+    color: #000000;
+    text-align: center;
+    font-family: "Forum", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;   
+    width: 81px;
+    margin: 20px 85px 20px 85px;
+}
+
+.login-window-item-text {
+    display: inline-block;
+    text-align: left;
+    color: #000000;
+    text-align: center;
+    font-family: "Inter", serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.3px;  
+    margin-left: 25px;  
+    margin-bottom: 10px;
+}
+
+.login-window-input {
+    margin-left: 25px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid #BB945F;
+}
+
+.login-window-login {
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter", serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;  
+    background-color: #FFFFFF;    
+    margin-left: 25px;
+    margin-top: 10px;      
+}
+
+.login-window-login:hover {
+    cursor: pointer;
+    background-color: #BB945F;
+    border: 1px solid #BB945F;
+    transition: 0.5s;   
+}
+
+.login-window-bottom-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.login-window-no-account {
+    color: #000;
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.login-window-register-button {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter", serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-decoration-line: underline;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 32px;
+}
+
+.login-window-register-button:hover {
+    cursor: pointer;
+}
+
+.burger-img {
+    width: 45px;
+    position: relative;
+    z-index: 2;
+    display: none;
+    margin-right: 20px;
+}
+
+.burger-img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.burger {
+    background-color: transparent;
+    display: flex;
+    z-index: 2;
+    position: relative;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin-right: 20px;
+    display: none;
+    transition: 0.5s;
+    height: 45px;
+    transform: translate(0, 15%);
+}
+
+.burger-line1 {
+    transition: all 0.5s;
+}
+
+.burger-line2 {
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.burger-line3 {
+    transition: all 0.5s;
+}
+
+.burger span {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    height: 2px;
+    width: 45px;
+    margin-bottom: 6px;
+    margin-top: 6px;
+    background-color: #FFFFFF;
+}
+
+.burger-line1.active {
+    transform: rotate(45deg);
+    margin: auto;
+    position: absolute;
+    top: calc(50% - 2px);
+    transition: 0.5s;
+}
+
+.burger-line2.active {
+    transform: translateX(-10000%);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.burger-line3.active {
+    transform: rotate(-45deg);
+    margin: auto;
+    position: absolute;
+    top: calc(50% - 2px);
+    transition: 0.5s;
+}
+
+.burger:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.burger-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 332px;
+    height: 570px;
+    background-color: black;
+    z-index: 1;
+    transform: translateX(-1000%);
+}
+
+.burger-menu.active {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 332px;
+    height: 570px;
+    background-color: black;
+    z-index: 1;
+    transform: translateX(0);
+    transition: 0.5s;
+}
+
+.burger-ul {
+    text-align: center;
+    margin: auto;
+    width: fit-content;
+    margin-top: 100px;
+}
+
+.burger-item {
+    margin-bottom: 30px;
+}
+
+.burger-item a {
+    color: #FFFFFF;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    text-decoration: none;
+}
+
+.burger-item a:hover {
+    border-bottom: 1px solid #FFFFFF;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.my-profile-window-wrapper {
+    opacity: 0;
+    transition: opacity 1s;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+}
+.my-profile-window {
+    opacity: 0;
+    transition: opacity 1s;
+    width: 600px;
+    height: 400px;
+    background-color: #FFFFFF;
+    display: flex;
+    top: calc(25vh - 200px);
+}
+
+.my-profile-left-part {
+    width: 170px;
+    height: 403px;
+    background: #0C0C0E;    
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-profile-white-square {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    background: #FFFFFF;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.my-profile-white-square-text {
+    color: #BB945F;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: uppercase;   
+    margin: auto;
+    margin-top: 30px; 
+}
+
+.my-profile-name {
+    max-width: 140px;
+    height: fit-content;
+    flex-shrink: 0;
+    background: #FFFFFF;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.my-profile-name-text {
+    color: #000000;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: capitalize;    
+    margin: 5px 15px 5px 15px;
+}
+
+.my-profile-right-part {
+    position: relative;
+    width: 430px;
+}
+
+.my-profile-right-part-header {
+    color: #000000;
+    text-align: center;
+    font-family: "Forum", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase; 
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-bottom: 40px;   
+    width: 207px;
+}
+
+.my-profile-window-close-button {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.my-profile-card-info {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.my-profile-visits {
+    display: flex;
+    flex-direction: column;
+}
+
+.my-profile-bonuses {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.my-profile-books {
+    display: flex;
+    flex-direction: column;
+}
+
+.my-profile-info-text {
+    color: #000000;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+    letter-spacing: 0.4px;
+    text-transform: capitalize;   
+    margin-bottom: 10px;     
+}
+
+.my-profile-info-img {
+    width: 20px;
+    height: 21px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.my-profile-info-number {
+    color: #000000;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+    letter-spacing: 0.2px;
+    text-transform: capitalize;    
+}
+
+.my-profile-number-of-visits-card-info {
+    margin: 0;
+}
+
+.my-profile-rented-books-header {
+    color: #0C0C0E;
+    text-align: left;
+    font-family: "Inter", sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;    
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.my-profile-rented-books-list {
+    margin-bottom: 40px;
+}
+
+.my-profile-rented-books-list-item {
+    color: #000000;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-transform: capitalize;    
+    list-style: disc;
+}
+
+.my-profile-card-number-info {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;  
+}
+
+.my-profile-card-number-text {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;     
+}
+
+.my-profile-card-number {
+    color: #BB945F;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;   
+    margin-left: 15px;
+    margin-right: 15px; 
+}
+
+.my-profile-card-number-copy {
+    width: 13.31px;
+    height: 12px;    
+    margin-top: 4px;
+}
+
+.my-profile-card-number-copy:hover {
+    cursor: pointer;
+}
+
+.my-profile-copy-button {
+    margin-top: 4px;
+    width: 13.31px;
+    height: 12px;
+    background-color: transparent;
+}
+
+.buy-card-window-wrapper {
+    opacity: 0;
+    transition: opacity 1s;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;    
+}
+
+.buy-card-window {
+    background-color: #FFFFFF;
+    width: 640px;
+    height: 540px;
+    opacity: 0;
+    transition: opacity 1s;
+    position: absolute;
+    top: calc(50vh - 270px);    
+}
+
+.buy-card-window-header {
+    width: 640px;
+    height: 60px;
+    background: #0C0C0E;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: "Forum", serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    position: relative;  
+}
+
+.buy-card-window-header-text {
+    position: absolute;
+    top: 10px;
+    left: 140px;
+}
+
+.buy-card-window-close-button {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.buy-card-window-body {
+    width: 640px;
+    height: 480px;
+    display: flex;
+    flex-direction: row;
+}
+
+.buy-card-window-body-left {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-left: 35px;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.buy-card-window-item-text {
+    color: #000000;
+    text-align: left;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.3px; 
+    margin-bottom: 10px;   
+    padding: 0;
+}
+
+.buy-card-window-input {
+    width: 200px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid #BB945F;    
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.buy-card-window-input-small {
+    width: 45px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid #BB945F; 
+    margin-right: 10px;  
+    margin-bottom: 10px; 
+    margin-top: 10px;
+}
+
+.small-inputs-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.button-price-wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 20px;   
+}
+
+.buy-card-window-button {
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;  
+    background-color: #FFFFFF;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;   
+}
+
+.buy-card-window-button-disabled {
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;  
+    background-color: #FFFFFF;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;   
+    cursor: default;
+}
+
+.buy-card-window-button:hover {
+    cursor: pointer;
+    background-color: #BB945F;
+    border: 1px solid #BB945F;
+    transition: 0.5s;    
+}
+
+.buy-card-price {
+    color: #0C0C0E;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;    
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+}
+
+.buy-card-window-body-right {
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    color: #8E8E8E;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 2px;
+}
+
+.welcome {
+    height: 600px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to top, transparent, #0C0C0E), url("./img/bg-books.png");
+    background-position: center;
+}
+
+.welcome-text {
+    align-items: center;
+    text-align: center;
+    background-color:#0C0C0E;
+    color:#FFFFFF;
+    font-size: 40px;
+    font-family: "Forum", serif;
+    letter-spacing: 3px;
+    height: 220px;
+    width: 600px;
+    padding: 35px 40px;
+    margin-top: 85px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Forum', serif;
+    font-size: 40px;
+    color: #0C0C0E;
+    margin-top: 18px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    text-transform: capitalize;
+    margin-bottom: 19px;
+}
+
+.line {
+    width: 50px;
+    height: 1px;
+    margin: auto;
+    background-color: #0C0C0E;
+}
+
+.about-text {
+    color: #000000;
+    text-align: center;
+    font-family: "Inter", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    margin-top: 40px;
+}
+
+.arrow {
+    display: none;
+}
+
+.carousel-wrapper .carousel {
+    white-space: nowrap;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.carousel {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.carousel-wrapper .carousel img {
+    margin-left: 25px;
+}
+
+.carousel img:first-child {
+    margin-left: 0px;
+}
+
+.about-picture-able {
+    width: 450px;
+}
+
+.three-pictures-choice {
+    display: flex;
+    width: fit-content;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 45px;
+}
+
+.picture-choice-able {
+    display: flex;
+    background-color: transparent;
+    height: 26px;
+    width: 26px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.picture-choice-disable {
+    display: none;
+    cursor: default;
+}
+
+.picture-choice:hover {
+    transition: 0.5s;
+}
+
+.circle-button-able {
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: none;
+    margin-top: 5px;
+}
+
+.circle-active {
+    cursor: default;
+    background-color: #BB945F;
+}
+
+.circle-not-active {
+    background-color: #0C0C0E;
+}
+
+.circle-button-disable {
+    display: none;
+    cursor: default;
+    width: 0;
+    height: 0;
+}
+
+.favorite-pick-text {
+    margin-left: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: #000000;
+    text-align: left;
+    font-family: "Inter", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.season-choice {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 15px;
+    margin-bottom: 38px;
+}
+
+.season-choice-button {
+    background-color: transparent;
+    width: 27px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+}
+
+.season-choice-button:hover {
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.season-choice-circle {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 17px;
+    height: 17px;
+    border: 2px solid #000000;
+}
+
+.small-circle-checked {
+    border-radius: 50%;
+    display: flex;
+    margin: auto;
+    width: 7px;
+    height: 7px;
+    background-color: #000000;
+}
+
+.season {
+    margin-left: 15px;
+    margin-right: 85px;
+    color: #000000;
+    font-family: "Inter", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    min-width: fit-content;
+}
+
+.season-text-winter {
+    min-width: 66.39px;
+}
+
+.season-text-spring {
+    min-width: 64.46px;
+}
+
+.season-text-summer {
+    min-width: 82.15px;
+}
+
+.season-text-autumn {
+    min-width: 73.13px;
+}
+
+.season-bold {
+    font-weight: bold;
+}
+
+.season-books {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.season-fade-in {
+    animation: fade-in 1s ease forwards;
+}
+
+.season-fade-out {
+    animation: fade-out 1s ease forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in-animation {
+    animation: fade-in 1s ease forwards;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        visibility: visible
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.fade-out-animation {
+    animation: fade-out 1s ease forwards;
+}
+
+.season-books-disable {
+    display: none;
+}
+
+.books-line {
+    display: flex;
+}
+
+.season-book {
+    margin-bottom: 40px;
+    display: inline-block;
+    width: 550px;
+    height: 555px;
+    border: 1px solid #000000;
+    position: relative;
+}
+
+.book1 {
+    margin-left: 20px;
+}
+
+.book2 {
+    margin-left: 260px;
+    margin-right: 60px;
+}
+
+.staff-pick {
+    color: #000000;
+    font-family: "Forum", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.favorites-line {
+    margin-top: -1px;
+    margin-bottom: 1px;
+    margin-left: 20px;
+    width: 60px;
+    height: 1px;
+    background-color: #BB945F;
+}
+
+.book-name {
+    color: #000000;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.book-description {
+    width: 355px;
+    color: #000000;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.buy-button {
+    width: 75px;
+    height: 30px;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    margin-left: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 5%;
+    position: absolute;
+    bottom: 15px;
+}
+
+.buy-button:hover {
+    cursor: pointer;
+    background-color: #BB945F;
+    border: 1px solid #BB945F;
+    transition: 0.5s;
+}
+
+.buy-button-own {
+    width: 75px;
+    height: 30px;
+    color: #BB945F;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    margin-left: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #BB945F;
+    border-radius: 5%;
+    position: absolute;
+    bottom: 15px;
+}
+
+.book-image {
+    position: absolute;
+    width: 200px;
+    left: 389px;
+    bottom: -1px;
+}
+
+.coffeeshop-text {
+    color: #000000;
+    text-align: center;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    margin: 40px 20px 40px 20px;
+
+}
+
+.menu {
+    display: flex;
+    margin: 40px 20px 0px 20px;
+}
+
+.coffee {
+    margin-right: auto;
+}
+
+.coffee-header {
+    color: #BB945F;
+    font-family: "Forum", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-bottom: 40px;
+}
+
+.coffee-item {
+    display: flex;
+}
+
+.coffee-name {
+    color: #000000;
+    font-family: "Inter", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-right: 60px;
+    margin-bottom: 40px;
+    display: inline-block;
+    height: 40px;
+    width: 196px;
+}
+
+.coffee-line {
+    display: inline-block;
+    width: 100px;
+    height: 1px;
+    background-color: #BB945F;
+    margin-top: 20px;
+}
+
+.coffee-cost {
+    color: #000000;
+    font-family: "Forum", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-left: 60px;
+}
+
+.desserts {
+    align-items: right;
+    margin-left: auto;
+}
+
+.desserts-header {
+    color: #BB945F;
+    font-family: "Forum", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    text-align: right;
+    margin-bottom: 40px;
+    margin-left: auto;
+}
+
+.dessert-item {
+    display: flex;
+}
+
+.dessert-name {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-bottom: 40px;
+    margin-right: 60px;
+    margin-left: auto;
+}
+
+.dessert-line { 
+    display: inline-block;
+    width: 100px;
+    height: 1px;
+    background-color: #BB945F;
+    margin-top: 20px;
+}
+
+.dessert-cost {
+    color: #000000;
+    font-family: "Forum", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-left: 60px;
+}
+
+.contacts {
+    position: relative;
+    margin-bottom: 90px;
+}
+
+.contact-info {
+    margin-right: 201px;
+}
+
+.contacts-header-1 {
+    color: #000000;
+    font-family: "Inter", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+.contacts-header-2 {
+    color: #000000;
+    font-family: "Inter", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.contacts-text {
+    color: #000000;
+    font-family: "Inter", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 40px;
+    text-transform: capitalize;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.tel {
+    color: #000000;
+    font-family: "Inter", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 40px;
+    text-transform: capitalize;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.tel:hover {
+    text-decoration: underline;
+    transition: 0.5s;
+}
+
+.mail {
+    color: #000000;
+    font-family: "Inter", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 40px;
+    text-transform: capitalize;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.mail:hover {
+    text-decoration: underline;
+    transition: 0.5s;
+}
+
+.map {
+    display: inline-block;
+    width: 696px;
+    height: 414px;
+    position: absolute;
+    right: 20px;
+    bottom: -30px;
+}
+
+.library-card-info {
+    display: flex;
+}
+
+.find-your-card {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: auto;
+}
+
+.find-card-text {
+    color: #000000;
+    font-family: "Inter", sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    margin-left: 158px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.card-form {
+    border: 3px solid #BB945F;
+    background: #FFFFFF;
+    width: 600px;
+    height: 386px;
+    margin-left: 20px;
+}
+
+.form-name {
+    color: #000000;
+    font-family: "Forum", serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+    padding-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.form-inputs {
+    background: #BB945F;
+    width: 560px;
+    height: 272px;
+    margin: auto;
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-input-text {
+    display: inline-block;
+    width: 520px;
+    height: 66px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    border: none;
+    color: #8E8E8E;
+    font-family: "Forum", serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; /* 166.667% */
+    letter-spacing: 0.6px;
+    padding-left: 20px;
+}
+
+.form-button {
+    width: 250px;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    border: 1px solid #0C0C0E;
+    display: block;
+    padding: 10px 40px;
+    align-items: flex-end;
+    margin-left: 179px;
+    margin-top: 20px;
+}
+
+.form-button:hover {
+    background-color: #BB945F;
+    border: 1px solid #BB945F;
+    color:#000000;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.card-info {
+    display: none;
+    flex-direction: row;
+    width: 170px;
+    margin: 15px auto;
+}
+
+.number-of-visits-card-info {
+    height: 20px;
+    width: 20px;
+    color: #000000;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;  
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.visits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.bonuses {
+    display: flex;
+    flex-direction: column;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.books {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-info-text {
+    color: #000000;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;    
+}
+
+.card-info-img {
+    width: 20px;
+    height: 21px;
+    margin: auto;
+}
+
+.card-info-number {
+    color: #000000;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;    
+}
+
+.get-card {
+    align-items: right;
+    margin-left: auto;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.get-card-header {
+    display: inline-block;
+    color: #000000;
+    text-align: center;
+    font-family: "Forum", serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    margin-top: 40px;
+    text-align: right;
+}
+
+.get-card-text {
+    width: 456px;
+    color: #000000;
+    text-align: right;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0.4px;
+    margin-top: 35px;
+    display: inline-block;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+.sign-log {
+    background-color: #FFFFFF;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    display: flex;
+    width: 75px;
+    height: 30px;
+    padding: 10px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    margin-top: 35px;
+    margin-left: 20px;
+}
+
+.sign-log:hover {
+    background-color: #BB945F;
+    border: 1px solid #BB945F;
+    color:#000000;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+footer {
+    height: 250px;
+    background-color: #0C0C0E;
+    margin-top: 41px;
+}
+
+.footer-before-line {
+    display: flex;
+    flex-direction: column;
+}
+
+.line1 {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.line2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.address {
+    width: 229px;
+    padding-top: 20px;
+    margin-left: 20px;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin-right: 1022px;
+    text-decoration: none;
+}
+
+.address:hover {
+    text-decoration: underline;
+    transition: 0.5s;
+}
+
+.week1 {
+    margin-right: 20px;
+    padding-top: 20px;
+    color: #FFF;
+    text-align: right;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.week2 {
+    margin-right: 20px;
+    color: #FFF;
+    text-align: right;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+
+.socials {
+    display: flex;
+    width: 102px;
+    height: 24px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 8px;
+    margin-right: auto;
+}
+
+.socials-img {
+    width: 24px;
+}
+
+hr {
+    width: 100%;
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+
+.footer-after-line {
+    display: flex;
+    flex-direction: row;
+    margin-top: 44px;
+}
+
+.year {
+    color: #FFFFFF;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 2px;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.rss {
+    color: #FFFFFF;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 2px;
+    margin-left: 135px;
+    text-decoration: none;
+}
+
+.rss:hover {
+    text-decoration: underline;
+    transition: 0.5s;
+}
+
+.username {
+    color: #FFFFFF;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 2px;
+    margin-left: auto;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.username:hover {
+    text-decoration: underline;
+    transition: 0.5s;
+}
+
+
+@media screen and (max-width: 1439px) {
+    body {
+        width: 100%;
+        max-width: 1024px;
+        min-width: 640px;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .icon-button {
+        margin-left: auto;
+    }
+
+    .welcome {
+        background-size: cover;
+    }
+
+    .about-text {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+    }
+    
+    .carousel-wrapper {
+        display: flex;
+        flex-direction: row;
+        width: 614px;
+        margin: auto;
+        vertical-align: middle;
+    }
+
+    .arrow {
+        display: flex;
+        width: 24px;
+        height: 24px;
+        align-items: center;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    .arrow-left {
+        display: block;
+        margin-right: 58px;
+    }
+
+    .arrow-right {
+        display: block;
+        margin-left: 58px;
+    }
+
+    .arrow-transparent {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+    .carousel {
+        display: flex;
+        justify-content: space-between;
+        white-space: nowrap;
+        max-width: 450px;
+        margin: auto;
+        margin-bottom: 25px;
+        margin-top: 20px;
+    }
+
+    .picture-choice-disable {
+        display: flex;
+        background-color: transparent;
+        height: 26px;
+        width: 26px;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .circle-button-disable {
+        cursor: pointer;
+        display: block;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        border: none;
+        margin-top: 5px;
+    }
+
+    .season-choice {
+        background-color: #FFFFFF;
+        position: sticky;
+        z-index: 2;
+        top: 0;
+    }
+
+    .season {
+        margin-left: 15px;
+        margin-right: 85px;
+    }
+
+    .autumn {
+        margin-right: 0;
+    }
+
+    .books-line {
+        flex-wrap: wrap;
+    }
+
+    .season-book {
+        margin: auto;
+        margin-bottom: 40px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .map {
+        bottom: -500px;
+        margin: auto;
+    }
+
+    .contacts {
+        position: relative;
+    }
+
+    .library-card-info {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-right: auto;
+    }
+
+    .librarycard {
+        margin-top: 570px;
+    }
+
+    .find-card-text {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    .form-block {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .find-your-card {
+        margin: auto;
+    }
+
+    .card-form {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .get-card {
+        align-items: center;
+        margin: auto;
+    }
+
+    .get-card-header {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .get-card-text {
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 10px;
+        width: 600px;
+    }
+
+    .buttons {
+        margin: auto;
+        justify-content: center;
+    }
+
+    .sign-log {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 30px;
+    }
+
+    .address {
+        margin-right: auto;
+    }
+
+    .week1 {
+        width: fit-content;
+    }
+
+    .footer-after-line {
+        justify-content: space-between;
+    }
+
+    .year {
+        margin: 0;
+        margin-left: 20px;
+        text-align: left;
+    }
+
+    .rss {
+        margin: 0;
+    }
+
+    .username {
+        margin: 0;
+        margin-right: 20px;
+        text-align: right;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .season {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
